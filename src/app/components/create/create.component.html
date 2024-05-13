@@ -1,0 +1,31 @@
+<h2>Creating Customers</h2>
+
+
+<form [formGroup]="createForm" (ngSubmit)="onSubmit()" novalidate>
+
+
+  <div class="mb-3">
+  <input formControlName="name" type="text" class="form-control" required placeholder="Name">
+  </div>
+  <div class="mb-3">
+  <input formControlName="lastname" type="text" class="form-control" required placeholder="Last Name">
+  </div>
+  <div class="mb-3">
+  <input formControlName="email" type="email" class="form-control" required placeholder="Email">
+  </div>
+  <div class="mb-3">
+  <input formControlName="phone" type="number" class="form-control" required placeholder="Phone">
+  </div>
+  <div class="mb-3">
+  <input formControlName="country" type="text" class="form-control" required placeholder="Country">
+  </div>
+  <div class="mb-3">
+  <input formControlName="city" type="text" class="form-control" required placeholder="City">
+  </div>
+  <div class="mb-3">
+  <input formControlName="address" type="text" class="form-control" required placeholder="Address">
+  </div>
+
+  <button [disabled]="!createForm.valid" type="submit" class="btn btn-primary">Save</button>
+
+</form>

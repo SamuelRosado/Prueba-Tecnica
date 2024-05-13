@@ -1,0 +1,39 @@
+<h2>Customers</h2>
+
+<div class="d-grid gap-2 mt-4">
+<a
+routerLink="create"
+type="button"
+class="btn btn-primary">
+Create
+</a>
+</div>
+
+<table class="table table-hover table-striped">
+  <thead class="bg-dark">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">phone</th>
+      <th scope="col">Contry</th>
+      <th scope="col">City</th>
+      <th scope="col">Address</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let client of clients">
+      <td>{{client.name}}</td>
+      <td>{{client.lastname}}</td>
+      <td>{{client.email}}</td>
+      <td>{{client.phone}}</td>
+      <td>{{client.country}}</td>
+      <td>{{client.city}}</td>
+      <td>{{client.address}}</td>
+      <td>
+        <button routerLink="/edit/{{client.id}}" class="btn btn-outline-secondary"><i class="fa-solid fa-pen"></i></button>
+        <button (click)="deleteClient(client)" class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i></button>
+      </td>
+    </tr>
+  </tbody>
+</table>
